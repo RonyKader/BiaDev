@@ -1,0 +1,80 @@
+ALTER TABLE employee
+ADD CONSTRAINT fk_designation
+FOREIGN KEY (designation_id)
+REFERENCES designation(Id);
+
+ALTER TABLE employee
+ADD CONSTRAINT fk_department_id
+FOREIGN KEY (department_id)
+REFERENCES department(Id);
+
+ALTER TABLE employee
+ADD CONSTRAINT fk_company_id
+FOREIGN KEY (company_id)
+REFERENCES company(Id);
+
+
+
+ALTER TABLE student
+ADD CONSTRAINT fk_country
+FOREIGN KEY (country)
+REFERENCES country(Id);
+
+
+
+
+ALTER TABLE student
+ADD CONSTRAINT fk_nationality
+FOREIGN KEY (nationality)
+REFERENCES country(Id);
+
+
+
+ALTER TABLE student
+ADD CONSTRAINT fk_course_id
+FOREIGN KEY (course_id)
+REFERENCES course(Id);
+
+
+
+
+ALTER TABLE student
+ADD CONSTRAINT fk_organization_id
+FOREIGN KEY (organization_id)
+REFERENCES organization(Id);
+
+
+ALTER TABLE student
+ADD CONSTRAINT fk_present_address_district_id
+FOREIGN KEY (present_address_district_id)
+REFERENCES district(Id);
+
+
+ALTER TABLE student
+ADD CONSTRAINT fk_permanent_address_district_id
+FOREIGN KEY (permanent_address_district_id)
+REFERENCES district(Id);
+
+
+
+ALTER TABLE result
+ADD CONSTRAINT fk_student_id
+FOREIGN KEY (student_id)
+REFERENCES student(Id);
+
+ALTER TABLE result
+ADD CONSTRAINT fk_session_id
+FOREIGN KEY (session_id)
+REFERENCES session(Id);
+
+
+ALTER TABLE result
+ADD CONSTRAINT fk_coure_id
+FOREIGN KEY (course_id)
+REFERENCES course(Id);
+
+
+ALTER TABLE result
+ADD CONSTRAINT fk_marks
+FOREIGN KEY (marks)
+REFERENCES grademarks(Id);
