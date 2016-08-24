@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/font-awesome.min.css" />
 
 		<!--[if IE 7]>
-		  <link rel="stylesheet" href="<?php echo base_url();?>assets/css/font-awesome-ie7.min.css" />
+		  
 		<![endif]-->
 
 		<!--page specific plugin styles-->
@@ -21,23 +21,19 @@
 		<!--fonts-->
 
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
-
 		<!--ace styles-->
 
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/ace.min.css" />
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/ace-responsive.min.css" />
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/ace-skins.min.css" />
         <link rel="stylesheet" href="<?php echo base_url();?>assets/css/chosen.css" />
-        
+
         <script src="<?php echo base_url();?>assets/js/jquery-1.9.1.min.js"></script>
         <!--basic scripts-->
-
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 		<!--page specific plugin scripts-->
         <script src="<?php echo base_url();?>assets/js/jquery.dataTables.min.js"></script>
-		<script src="<?php echo base_url();?>assets/js/jquery.dataTables.bootstrap.js"></script>
-        
+		<script src="<?php echo base_url();?>assets/js/jquery.dataTables.bootstrap.js"></script>       
 
 		<!--[if lte IE 8]>
 		  <link rel="stylesheet" href="<?php echo base_url();?>assets/css/ace-ie.min.css" />
@@ -88,8 +84,3 @@
 				</div><!--/.container-fluid-->
 			</div><!--/.navbar-inner-->
 		</div>
-
-		<div class="container-fluid" id="main-container">
-			<a id="menu-toggler" href="#">
-				<span></span>
-			</a>

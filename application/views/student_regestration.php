@@ -8,6 +8,7 @@
     }
   .form-control{ height: 40px; border-radius: 0; }
   textarea.form-control.text-add{ height: 40px; }
+
 </style>
 <div id="main-content" class="clearfix">
 <div id="breadcrumbs">
@@ -37,6 +38,7 @@
       </form>
       </div>--><!--#nav-search-->
 </div>
+
 
 <div id="page-content" class="clearfix">
    <div class="container">
@@ -106,9 +108,17 @@
                     <div class="form-group">
                         <select name="session_month" id="" class="form-control">
                             <option value="">Select a course</option>
-                            <option value="">Diploma</option>
-                            <option value="">Bsc</option>
-                            <option value="">Arts</option>
+                            <?php 
+                               if ( $course_name ) 
+                               {
+                                 foreach ($course_name as $coursename ) 
+                                 {
+                                  ?>
+                                   <option value="<?php echo $coursename->course_name;?>"><?php echo $coursename->course_name;?></option>
+                                  <?php
+                                 }
+                               }
+                            ?>
                         </select>
                     </div>
                 </div>
@@ -148,9 +158,17 @@
                         <div class="form-group">
                             <select name="session_month" id="" class="form-control">
                                 <option value="">Select a Designation</option>
-                                <option value="">Diploma</option>
-                                <option value="">Bsc</option>
-                                <option value="">Arts</option>
+                                <?php 
+                                   if ( $designation_name ) 
+                                   {
+                                     foreach ($designation_name as $designation ) 
+                                     {
+                                      ?>
+                                       <option value="<?php echo $designation->designation;?>"><?php echo $designation->designation;?></option>
+                                      <?php
+                                     }
+                                   }
+                                ?>
                             </select>
                         </div>
                     </div>
@@ -260,58 +278,137 @@
                                 <h2>Address <span>*</span></h2>
                             </header>
                         </div>
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                            <div class="form-group">
-                                <textarea name="" id="" class="form-control text-add" placeholder="Address"></textarea>
+                        <div class="clearfix"></div>
+                        
+                            <div id="rem" class="main-wrap">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                        <div class="form-group">
+                                            <textarea name="" id="" class="form-control text-add" placeholder="Address"></textarea>
+                                        </div>
+                                    </div>
+            
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                        <div class="form-group">
+                                            <select name="district_name" id="" class="form-control">
+                                                <option value="">Select District</option>
+                                                <?php 
+                                                    if ( $district_info ) 
+                                                    {
+                                                      foreach ($district_info as $disInfo ) 
+                                                      {
+                                                       ?>
+                                                        <option value="<?php echo $disInfo->district_name;?>"><?php echo $disInfo->district_name;?></option>
+                                                       <?php
+                                                      }
+                                                    }
+                                                 ?>
+                                            </select>
+                                        </div>
+                                    </div>
+            
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                        <div class="form-group">
+                                            <select name="session_month" id="" class="form-control">
+                                            <option value="">Select Upzilla</option>
+                                                <?php 
+                                                    if ( $upzilla_info ) 
+                                                    {
+                                                      foreach ($upzilla_info as $upzillaInfo ) 
+                                                      {
+                                                       ?>
+                                                        <option value="<?php echo $upzillaInfo->upzilla_name;?>"><?php echo $upzillaInfo->upzilla_name;?></option>
+                                                       <?php
+                                                      }
+                                                    }
+                                                 ?>
+                                            </select>
+                                        </div>
+                                    </div>
+            
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                        <div class="form-group">
+                                            <input type="text" name="registration" id="" class="form-control" placeholder="Post Office">
+                                        </div>
+                                    </div>
+            
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                        <div class="form-group">
+                                            <input type="text" name="registration" id="" class="form-control" placeholder="Post Code">
+                                        </div>
+                                    </div>
+            
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                        <div class="form-group">
+                                            <button id="add" class="btn btn-primary">Add more</button>
+                                        </div>
+                                    </div>
                             </div>
-                        </div>
-
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                            <div class="form-group">
-                                <select name="session_month" id="" class="form-control">
-                                    <option value="">Select District</option>
-                                    <option value="">Dhaka</option>
-                                    <option value="">Pabna</option>
-                                    <option value="">Nator</option>
-                                    <option value="">Comilla</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                            <div class="form-group">
-                                <select name="session_month" id="" class="form-control">
-                                    <option value="">Select P.S./Upazila</option>
-                                    <option value="">Dhaka</option>
-                                    <option value="">Pabna</option>
-                                    <option value="">Nator</option>
-                                    <option value="">Comilla</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                            <div class="form-group">
-                                <input type="text" name="registration" id="" class="form-control" placeholder="Post Office">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                            <div class="form-group">
-                                <input type="text" name="registration" id="" class="form-control" placeholder="Post Code">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                            <div class="form-group">
-                                <button class="btn btn-primary">Add more</button>
-                            </div>
-                        </div>
+                            <div class="clearfix"></div>
+                            <div class="append-wrapper clearfix"></div>
                         <!-- End of Address section -->
+        </form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.js"></script>
+<script>
+    jQuery(document).ready(function(){
+        var i = 1;
+        jQuery('#add' ).click(function(){
+            i++;
+           var htmlWrite = '';
+                htmlWrite += '<div id="rem'+i+'" class="main-wrap clearfix">'+
+                            '<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">'+
+                            '<div class="form-group">'+
+                                '<textarea name="" id="'+i+'" class="form-control text-add" placeholder="Address"></textarea>'+
+                            '</div>'+
+                        '</div>'+
+                        '<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">'+
+                            '<div class="form-group">'+
+                                '<select name="district_name" id="'+i+'" class="form-control">'+
+                                    '<option value="">Select District</option>';
+                                        
+                htmlWrite +=    '</select>'+
+                            '</div>'+
+                        '</div>'+
+                        '<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">'+
+                            '<div class="form-group">'+
+                                '<select name="session_month" id="'+i+'" class="form-control">'+
+                                '<option value="">Select Upzilla</option>'+
+                                    
+                                '</select>'+
+                            '</div>'+
+                        '</div>'+
+                        '<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">'+
+                            '<div class="form-group">'+
+                                '<input type="text" name="registration" id="'+i+'" class="form-control" placeholder="Post Office">'+
+                            '</div>'+
+                        '</div>'+
+                        
+                        '<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">'+
+                            '<div class="form-group">'+
+                                '<input type="text" name="registration" id="'+i+'" class="form-control" placeholder="Post Code">'+
+                            '</div>'+
+                        '</div>'+
+                        
+                        '<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">'+
+                            '<div class="form-group">'+
+                                '<a href="javascript:void(0);" id="rem'+i+'" class="btn btn_rl btn-danger">Remove</a>'+
+                            '</div>'+
+                        '</div>'+
+                        '</div>';
+
+            jQuery('.append-wrapper').append( htmlWrite );
+            
+            jQuery(".btn_rl").click(function(){
+                var get_id = $(this).attr('id');
+                // alert(get_id);
+                jQuery('#'+get_id+'').remove();
+            })
+            return false;
+            });
 
 
+    });
         
-    </form>
+</script>
 
 
     </div>

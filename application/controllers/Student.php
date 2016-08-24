@@ -1747,7 +1747,14 @@ order by registration_no');
 
 	public function registration()
 	{
+		$this->load->model( 'students_model' );
+		$data['course_name'] = $this->students_model->get_course();
+		$data['designation_name'] = $this->students_model->get_designation();
+		$data['district_info'] = $this->students_model->get_district();
+		$data['upzilla_info'] = $this->students_model->get_upzilla();
 		$data['student_regestration'] = 'student_regestration';
 		$this->load->view('layouts/main', $data );
 	}
+
+
 }
